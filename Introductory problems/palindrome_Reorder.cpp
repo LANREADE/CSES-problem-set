@@ -16,17 +16,19 @@ const int MOD = 1e9 + 7;
 const int INF = 1e9;
 const ll LLINF = 1e18;
 
-void solve( int tc = 0) {
-    ll row , col;
-    cin >> row >> col;
-    ll result;
+void solve() {
+        string  n; 
+        cin >> n;
+        
 
 
 }
 int main() {
     fastio;
+
     int tc = 1; // Number of test cases
     // cin >> tc;
+
     while (tc--) {
         solve();
     }
