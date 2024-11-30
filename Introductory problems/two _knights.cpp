@@ -17,32 +17,7 @@ const int INF = 1e9;
 const ll LLINF = 1e18;
 
 void solve() {
-    ll n;
-    cin >> n; 
-    if(n == 1 ){
-        cout << "1\n";
-        return;
-    }
-    if( n == 2 || n == 3 ){
-        cout << "NO SOLUTION\n" ; 
-    }
-    vi even , odd;
-
-    for(int i =1 ; i <= n ; i++){
-        if(i % 2 == 0){
-            even.pb(i);
-        }else{
-            odd.pb(i);
-        }
-    }
-    for(int num : even){
-        cout << num << " ";
-    }
-    for(int num : odd){
-        cout << num << " ";
-    }
-    cout << "\n";
-
+    
 }
 int main() {
     fastio;
