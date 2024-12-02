@@ -16,7 +16,18 @@ const int MOD = 1e9 + 7;
 const int INF = 1e9;
 const ll LLINF = 1e18;
 
-void solve(){
+void solve() {
+        int n; 
+        cin>> n;
+        set<int> distinctNumbers;
+
+        for(int i =0; i < n ; i++){
+                int x;
+                cin >> x;
+                distinctNumbers.insert(x);
+        }
+        cout << distinctNumbers.size() << "\n";
+
 }
 int main() {
     fastio;
