@@ -23,21 +23,25 @@ const int MOD = 1e9 + 7;
 void solve() {
     int n, x;
     cin >> n >> x;
+
     vi coins(n);
-    vi dp(x + 1, MOD);
+    vi dp(x + 1, 0);
+
     for (int i = 0; i < n; i++) {
         cin >> coins[i];
     }
-    dp[0] = 0;
+
+    dp[0] = 1;
+
     for (int sum = 1; sum <= x; sum++) {
         for (int coin : coins) {
             if (sum - coin >= 0) {
-                dp[sum] = min(dp[sum], dp[sum - coin] + 1);
+                dp[sum] = (dp[sum] + dp[sum - coin]) % MOD;
             }
         }
     }
-    int result = (dp[x] == MOD) ? -1 : dp[x];
-    cout << result << "\n";
+
+    cout << dp[x] << "\n";
 }
 
 int main() {
@@ -46,5 +50,6 @@ int main() {
     while (tc--) {
         solve();
     }
+
     return 0;
 }
