@@ -14,23 +14,18 @@ const int MOD = 1e9 + 7;
 const int INF = 1e9;
 const ll LLINF = 1e18;
 const int MAXd = 26;
+int powr(ll a , int b){
+        int res = 1;
+        while(b > 0){
+                if( b & 1) res = (res * a ) % MOD;
+                a = (a * a) % MOD;
+                b >>= 1;
+        }
+        return res;
+}
 void solve( int tc = 0){
         int n; cin >> n;
-        vector<int>a(n);
-        for(int & x : a) cin >> x;
-        ll ans = LLONG_MAX;
-        for(int mask = 0; mask <( 1 << n) ; mask++){
-                ll s1 = 0, s2 = 0;
-                for(int i = 0; i < n ; i++){
-                        if(mask & (1 << i)){
-                                s1 += a[i];
-                        }else{
-                                s2 += a[i];
-                        }
-                }
-                ans = min( ans , abs( s1 - s2));
-        }
-        cout << ans << "\n";
+        cout << powr(2, n) << "\n";
 }
 int main() {
     fastio;

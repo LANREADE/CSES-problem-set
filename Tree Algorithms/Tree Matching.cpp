@@ -14,30 +14,32 @@ const long long LLINF = LLONG_MAX;
 const int MOD = 1e9 + 7;
 const int INF = INT_MAX;
 const int N = 2e5 + 5;
-int n, sz[N];
-vector<int> g[N];
-void dfs(int u){
-    sz[u] = 1;
-    for(int v : g[u]){
-        dfs(v);
-        sz[u] += sz[v];
-    }
+int n , a , b , cnt;
+vector<int>adj[N];
+bool used[N];
+void dfs(int u = 1 , int par = 0){
+        for(int v : adj[u]){
+                if(v != par)dfs(v , u);
+        }
+        if(!used[par] && !used[u] && par != 0){
+                used[par] = used[u] = true;
+                cnt++;
+        }
+
 }
 void solve() {
     cin >> n; 
-    for(int i = 2 , p ; i <=n; i++){
-        cin >> p;
-        g[p].push_back(i);
-    }  
-    dfs(1);
-    for(int i = 1; i<= n; i++){
-        cout << sz[i] - 1 << ( i == n ? '\n' : ' ');
-    } 
+    for(int i = 0; i <n ; i++){
+        cin >> a >> b;
+        adj[a].push_back(b);
+        adj[b].push_back(a);
+    }
+    dfs(1 , 0);
+    cout << cnt << '\n';
 }
 int main() {
     fastio;
-    int tc = 1; // Number of test cases
-    // cin >> tc;
+    int tc = 1;
     while (tc--) {
         solve();
     }

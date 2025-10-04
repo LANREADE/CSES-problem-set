@@ -13,23 +13,9 @@ using namespace std;
 const int MOD = 1e9 + 7;
 const int INF = 1e9;
 const ll LLINF = 1e18;
-//observation of patterns
+
 void solve (){
-    ll r , c;
-    cin >> r >>  c;
-    if(r  > c ){
-        if(r % 2){
-            cout << ( r- 1 )*(r - 1) + c << "\n";
-        }else{
-            cout << r * r - c + 1 << "\n";
-        }
-    }else{
-        if( c % 2){
-            cout << c * c - r + 1 << "\n";
-        }else{
-            cout << (c - 1) * (c - 1 ) + r << "\n";
-        }
-    }
+
 }
 int main() {
     fastio;

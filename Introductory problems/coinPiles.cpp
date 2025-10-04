@@ -9,27 +9,20 @@ using namespace std;
 #define pb push_back
 #define mp make_pair
 #define fi first
-#define all(a) (a).begin(), (a).end()
 #define se second
 const int MOD = 1e9 + 7;
 const int INF = 1e9;
 const ll LLINF = 1e18;
-
-
-void solve(int tc = 0) {
-    int n; cin >> n;
-    if(n == 2 || n == 3){
-        cout << "NO SOLUTION\n";
-        return;
-    }
-    for(int i = 2 ; i <=n; i+= 2) cout << i << " ";
-    for(int i = 1 ; i <=n; i+= 2) cout << i << " ";
-    cout << "\n";
+void solve (int tc = 0){
+        ll a, b;
+        cin >> a >> b;
+        cout << (((a + b) % 3 || min ( a , b) < (a + b) / 3) ? "NO" : "YES") << "\n";
 }
 signed main() {
     fastio;
     int tc = 1;
-    for(int t = 1; t <= tc ; t++){
+    cin >> tc;
+    for(int t = 1 ; t <= tc; t++){
         solve(t);
     }
 }

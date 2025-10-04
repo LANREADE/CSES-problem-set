@@ -14,26 +14,10 @@ const int MOD = 1e9 + 7;
 const int INF = 1e9;
 const ll LLINF = 1e18;
 const int MAXd = 26;
-int josephus(int n , int k){
-        if( n == 1) return 1;
-        int mid = (n + 1 )/ 2;
-        if(k <= mid) {
-                if(2*k > n) return 2*k % n;
-                else{
-                        return 2* k;
-                }
-        }
-        int offset = k - mid;
-        int sub = josephus(n >> 1 , offset);
-        if(n & 1 ) return 2 * sub + 1;
-        else{
-                return 2 * sub - 1;
-        }
-}
+int n, m;
 void solve(int tc = 0) {
-        int n , k;
-        cin >> n >> k;
-        cout  << josephus(n , k) << '\n';
+    
+
 }
 signed main() {
     ios_base::sync_with_stdio(false); cin.tie(NULL);
