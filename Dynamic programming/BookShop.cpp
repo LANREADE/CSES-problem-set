@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define ll long long
 #define vi vector<int>
@@ -11,22 +10,23 @@ using namespace std;
 #define mp make_pair
 #define fi first
 #define se second
-
 const int MOD = 1e9 + 7;
 const int INF = 1e9;
 const ll LLINF = 1e18;
-
-void solve() {
+void solve(int tc = 0) {
+        int n , x; cin >> n >> x;
+        vetor<int>a(n), b(n );
+        for(auto &x : a) cin >> x;
+        for(auto &v : a) cin >> v;
+        
 }
 
-int main() {
-    fastio;
-
-    int tc = 1; // Number of test cases
+signed main() {
+    ios_base::sync_with_stdio(false); cin.tie(NULL);
+    int tc = 1;
     // cin >> tc;
-    while (tc--) {
-        solve();
+    for (int t = 1; t <= tc; t++) {
+        // cout << "Case #" << t << ": ";
+        solve(t);
     }
-
-    return 0;
 }
